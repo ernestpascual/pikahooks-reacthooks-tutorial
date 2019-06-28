@@ -32,7 +32,7 @@ const TableGen = (props) =>
             {props.items.map(item => (
             <tr>
                 <TableCell>{item.name}</TableCell>
-   
+                <TableCell>{item.url}</TableCell>
             </tr>
             ))}
             </Fragment>
