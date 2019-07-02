@@ -8,4 +8,6 @@ How to use:
 
 Enjoy!
 
+Resources:
+- [PokéAPI - The RESTful Pokémon API](https://pokeapi.co/)
 
