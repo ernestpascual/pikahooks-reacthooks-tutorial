@@ -1,51 +1,20 @@
-import React, {useEffect, useState} from 'react';
-import Table from './components/Table'
-
+import React from 'react';
+//import Table from './components/Table'
+import { Route, Switch } from "react-router-dom";
 import './App.css';
-
+import PokeList from './components/PokeList'
+import PokeSearch from './components/PokeSearch'
+import PokeTypes from './components/PokeTypes'
+import PokeHome from './components/PokeHome'
 function App() {
-  
-  const [pokemon, setPokemon] = useState([])
-  const [search, setSearch] = useState("")
-  const [headers] = useState([{hd:"Pokemon"}, {hd:"URL"}])
-  const [pokemonPic, setPokemonPic] = useState("")
-
-  useEffect(() => {
-    /*
-    fetch("https://pokeapi.co/api/v2/pokemon/pikachu")
-    .then(pikachu => pikachu.json()) // ginagawa na JSON to convert
-    .then(pokemons => {
-      setPokemonPic(pokemons.sprites.front_default)
-    })
-    */
-  })
-
-
-  // function na gumagana pag nag click ako
-  // 
-  const searchPoke = event => {
-    try {
-      fetch("https://pokeapi.co/api/v2/pokemon/" + search)
-      .then(pikachu => pikachu.json()) // ginagawa na JSON to convert
-      .then(pokemons => {
-        setPokemonPic(pokemons.sprites.front_default)
-      })
-    } catch {
-      alert('WALANG GANYANG POKE')
-    }
-  }
-
-  const searchItem = event => {
-    event.preventDefault();
-    setSearch(event.target.value)
-  }
-
   return (
     <div>
-        <h3> Search: </h3>
-          <input type="text" placeholder="Search pokemnz" onChange ={searchItem} />
-          <button onClick={searchPoke} > Search </button>
-        <img src={pokemonPic} alt="pokemon" />
+        <Switch>
+          <Route exact path="/" component={ PokeHome } />
+          <Route path="/pokelist" component={ PokeList } />
+          <Route path="/pokesearch" component={ PokeSearch } />
+          <Route path="/poketypes" component={ PokeTypes } />
+        </Switch>
     </div>
   );
 }
