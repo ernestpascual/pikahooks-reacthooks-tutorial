@@ -10,7 +10,7 @@ function App() {
             <li> <a href="/poketypes"> Pokemon types - useEffect() + useState() example </a> </li>
         </ul>
         <br />
-        <h3> Clone Me: </h3> git clone https://bitbucket.org/ernestpascual/hellohooks.git
+        <a href="https://github.com/ernestpascual/pikahooks-reacthooks-tutorial"> Click here for the codes! </a>
     </div>
   );
 }
